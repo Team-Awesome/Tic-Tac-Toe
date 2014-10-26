@@ -2,13 +2,28 @@
 
 public class Tic_Tac_Toe
 {
-	public static final int Rows = 3;
-	public static final int Colums = 3;
-	public static String [][]array = new String[Rows][Colums];
+	private static final int Rows = 3;
+	private static final int Colums = 3;
+	private static String [][]array = new String[Rows][Colums];
+	private static String Player = "X";	
+
+	public static String Change_Player(String player)
+	{
+		if(player == "X")
+    		{
+        		Player = "O";
+    		}
+    		else
+    		{
+        		Player = "X";
+	    	}
 	
+		return Player;
+	}	
+
 	public static void Update_Array(int x, int y)
 	{
-		array[x-1][y-1] = "X";
+		array[x-1][y-1] = Player;
 	}
 
 	public static void Initialize_Board()
@@ -26,8 +41,6 @@ public class Tic_Tac_Toe
 	{	
 		Initialize_Board();
 		String Board;
-	
-		Update_Array(1,1);
 	
 		Board  = "   1 2 3 \n";
 		Board += "---------\n";
