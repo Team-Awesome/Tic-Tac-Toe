@@ -2,12 +2,6 @@
 
 public class Tic_Tac_Toe
 {
-	public static int smu()	
-	{
-		return 1;
-	}
-
-
 	public static String Write_Board()
 	{	
 		String Board;
