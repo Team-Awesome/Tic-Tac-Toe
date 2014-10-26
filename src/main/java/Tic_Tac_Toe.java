@@ -29,7 +29,7 @@ public class Tic_Tac_Toe
 		Board += "2||" + array[1][0] + "|" + array[1][1] + "|" + array[1][2] + "|\n";;
 		Board += "3||" + array[2][0] + "|" + array[2][1] + "|" + array[2][2] + "|\n";
 			
-		return Board;/
+		return Board;
 	}	
 
 	public static void main(String[] args)
