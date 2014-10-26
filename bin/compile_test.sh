@@ -4,7 +4,7 @@ if [ ! -d classes ]; then
 fi
 
 #on linux
-javac -classpath "classes:lib/junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes
+javac -classpath "classes:lib/junit-4.11.jar" src/test/java/*.java -d classes
 #on windows
 #javac -classpath "classes;lib\junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes
 
