@@ -12,16 +12,7 @@ public class Tic_Tac_Toe
 		Board += "2||*|*|*|\n";
 		Board += "3||*|*|*|\n";
 			
-		return Board;
-		
-		/*
-		System.out.println("   1 2 3 ");
-        	System.out.println("---------");
-		System.out.println("1||*|*|*|");
-        	System.out.println("2||*|*|*|");
-        	System.out.println("3||*|*|*|");
-        	System.out.println();
-		*/
+		return Board;/
 	}	
 
 	public static void main(String[] args)
