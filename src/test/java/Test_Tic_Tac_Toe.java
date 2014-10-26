@@ -13,9 +13,10 @@ public class Test_Tic_Tac_Toe
 	
 
 	@Test
-	public void smuTest()
+	public void testWrite_Board()
 	{
-		assertEquals(1, Tic_Tac_Toe.smu());
+		assertEquals("   1 2 3 \n---------\n1||*|*|*|\n2||*|*|*|\n3||*|*|*|\n"
+				, Tic_Tac_Toe.Write_Board());
 	}
 
 }
