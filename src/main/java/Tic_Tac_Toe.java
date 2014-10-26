@@ -6,6 +6,11 @@ public class Tic_Tac_Toe
 	public static final int Colums = 3;
 	public static String [][]array = new String[Rows][Colums];
 	
+	public static void Update_Array(int x, int y)
+	{
+		array[x-1][y-1] = "X";
+	}
+
 	public static void Initialize_Board()
 	{
 		for(int i = 0; i < Rows; i++)
@@ -15,14 +20,15 @@ public class Tic_Tac_Toe
 				array[i][j] = "*";
 			}
 		}
-
 	}
 
 	public static String Write_Board()
 	{	
 		Initialize_Board();
 		String Board;
-		
+	
+		Update_Array(1,1);
+	
 		Board  = "   1 2 3 \n";
 		Board += "---------\n";
 		Board += "1||" + array[0][0] + "|" + array[0][1] + "|" + array[0][2] + "|\n";
@@ -31,7 +37,7 @@ public class Tic_Tac_Toe
 			
 		return Board;
 	}	
-
+	
 	public static void main(String[] args)
 	{
 		System.out.println("Lets do this peeps");
