@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class Tic_Tac_Toe
 {
@@ -6,6 +6,19 @@ public class Tic_Tac_Toe
 	private static final int Colums = 3;
 	private static String [][]array = new String[Rows][Colums];
 	private static String Player = "X";	
+	private static Scanner in = new Scanner(System.in);
+
+	public static boolean Play_Game()
+	{
+		System.out.println(Write_Board());
+		int x = Translate_Input(in.next());		
+		int y = in.nextInt();		
+		
+		Update_Array(x, y);
+		Change_Player(Player);		
+
+		return true;
+	}
 
 	public static int Translate_Input(String xCoordinate)
 	{
@@ -57,21 +70,21 @@ public class Tic_Tac_Toe
 
 	public static String Write_Board()
 	{	
-		Initialize_Board();
 		String Board;
 	
 		Board  = "   1 2 3 \n";
 		Board += "---------\n";
-		Board += "1||" + array[0][0] + "|" + array[0][1] + "|" + array[0][2] + "|\n";
-		Board += "2||" + array[1][0] + "|" + array[1][1] + "|" + array[1][2] + "|\n";;
-		Board += "3||" + array[2][0] + "|" + array[2][1] + "|" + array[2][2] + "|\n";
+		Board += "A||" + array[0][0] + "|" + array[0][1] + "|" + array[0][2] + "|\n";
+		Board += "B||" + array[1][0] + "|" + array[1][1] + "|" + array[1][2] + "|\n";;
+		Board += "C||" + array[2][0] + "|" + array[2][1] + "|" + array[2][2] + "|\n";
 			
 		return Board;
 	}	
 	
 	public static void main(String[] args)
 	{
-		System.out.println("Lets do this peeps");
+		Initialize_Board();
+		while(Play_Game());
 	}
 
 }
