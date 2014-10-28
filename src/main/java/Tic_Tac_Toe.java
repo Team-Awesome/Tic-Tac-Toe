@@ -17,7 +17,7 @@ public class Tic_Tac_Toe
 
 	public static boolean Is_Input_In_Bounds(int x, int y)
 	{
-		if(x > 3 || x < 0 || y > 3 || y < 0)
+		if(x > 3 || x < 1 || y > 3 || y < 1)
 		{
 			return false; 
 		}
@@ -29,7 +29,7 @@ public class Tic_Tac_Toe
 
 	public static boolean Is_Marked(int x, int y)
 	{
-		if(array[x][y] == "X" || array[x][y] == "O")
+		if(array[x-1][y-1] == "X" || array[x-1][y-1] == "O")
 		{
 			return true;
 		}
@@ -64,7 +64,7 @@ public class Tic_Tac_Toe
 		int x = Translate_Input(in.next());		
 		int y = in.nextInt();		
 		
-		if(Is_Input_In_Bounds(x, y))
+		if(!Is_Input_In_Bounds(x, y))
 		{
 			Out_Of_Bounds();
 		}
