@@ -7,6 +7,23 @@ public class Tic_Tac_Toe
 	private static String [][]array = new String[Rows][Colums];
 	private static String Player = "X";	
 	private static Scanner in = new Scanner(System.in);
+	
+	public static boolean Win()
+	{
+		for(int i = 0; i < 3; i++)
+		{
+        		if((array[0][i]==Player && array[1][i]==Player && array[2][i]==Player) || (array[i][0]==Player && array[i][1]==Player && array[i][2]==Player))
+        		{
+				return true;
+			}
+		}
+		if((array[0][0]==Player && array[1][1]==Player && array[2][2]==Player || array[0][2]==Player && array[1][1]==Player && array[2][0]==Player))
+		{
+			return true;
+		}
+	
+		return false;
+	}
 
 	public static boolean Play_Game()
 	{
@@ -15,6 +32,10 @@ public class Tic_Tac_Toe
 		int y = in.nextInt();		
 		
 		Update_Array(x, y);
+		if(Win())
+		{
+			return false;
+		}
 		Change_Player(Player);		
 
 		return true;
