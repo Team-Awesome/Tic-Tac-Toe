@@ -7,6 +7,24 @@ public class Tic_Tac_Toe
 	private static String [][]array = new String[Rows][Colums];
 	private static String Player = "X";	
 
+	public static int Translate_Input(String xCoordinate)
+	{
+		switch(xCoordinate)
+		{
+			case "a":
+			case "A":
+				return 1;
+			case "b":
+			case "B":
+				return 2;
+			case "c":
+			case "C": 
+				return 3;
+			default:
+				return 0; //fix later
+		}
+	}
+
 	public static String Change_Player(String player)
 	{
 		if(player == "X")

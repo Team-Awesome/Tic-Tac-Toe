@@ -12,7 +12,25 @@ public class Test_Tic_Tac_Toe
 
 		org.junit.runner.JUnitCore.main("Test_Tic_Tac_Toe");
 	}
-	
+
+	@Test
+	public void testTranslate_Input_a()
+	{
+		assertEquals(1, Tic_Tac_Toe.Translate_Input("A"));
+	}
+
+        @Test
+        public void testTranslate_Input_b()
+        {
+                assertEquals(2, Tic_Tac_Toe.Translate_Input("b"));
+        }
+
+        @Test
+        public void testTranslate_Input_c()
+        {
+                assertEquals(3, Tic_Tac_Toe.Translate_Input("C"));
+        }
+
 	@Test
 	public void testChange_Player_XtoO()
 	{
