@@ -9,11 +9,18 @@ public class Tic_Tac_Toe
 	private static int TurnCounter = 0;
 	private static Scanner in = new Scanner(System.in);
 	
-	private static void Out_Of_Bounds()
+	private static void Out_Of_Bounds_Exception()
 	{
 		System.out.println("\nInput is out of bounds. Please try again! :) \n");
                 Play_Game();
 	}
+
+        private static void Is_Marked_Exception()
+        {
+                System.out.println("\nSpot already Marked. Please select a new one! :) \n");
+                Play_Game();
+        }
+
 
 	public static boolean Is_Input_In_Bounds(int x, int y)
 	{
@@ -58,41 +65,62 @@ public class Tic_Tac_Toe
 		return false;
 	}
 
+	public static boolean Draw()
+	{
+		if(TurnCounter == 9)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
 	public static boolean Play_Game()
 	{
 		System.out.println(Write_Board());
-		int x = Translate_Input(in.next());		
-		int y = in.nextInt();		
+		int x = Translate_xCoordinate(in.next());		
+		int y = Translate_yCoordinate(in.next());		
 		
 		if(!Is_Input_In_Bounds(x, y))
 		{
-			Out_Of_Bounds();
+			Out_Of_Bounds_Exception();
 		}
 
 		if(Is_Marked(x, y))
 		{
-		   System.out.println("\nSpot already Marked. Please select a new one! :) \n");
-			Play_Game();
+		   	Is_Marked_Exception();
 		}
 
 		Update_Array(x, y);
+
 		if(Win())
 		{
 			return false;
 		}
 
 		Change_Player(Player);
-
+	
 		TurnCounter++;
-		if(TurnCounter == 9)
-		{
-			return false;
-		}	
-
-		return true;
+	
+		return Draw();
 	}
 
-	public static int Translate_Input(String xCoordinate)
+	public static int Translate_yCoordinate(String yCoordinate)
+	{
+	        try
+                {
+                        int y = Integer.parseInt(yCoordinate);
+			return y;
+                }
+                catch(NumberFormatException nfe)
+                {
+                        return 0;
+                }
+	}
+
+	public static int Translate_xCoordinate(String xCoordinate)
 	{
 		switch(xCoordinate)
 		{
@@ -158,5 +186,9 @@ public class Tic_Tac_Toe
 		Initialize_Board();
 		while(Play_Game());
 	}
-
 }
+
+
+
+
+
