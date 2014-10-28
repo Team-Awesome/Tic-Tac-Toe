@@ -6,18 +6,51 @@ public class Tic_Tac_Toe
 	private static final int Colums = 3;
 	private static String [][]array = new String[Rows][Colums];
 	private static String Player = "X";	
+	private static int TurnCounter = 0;
 	private static Scanner in = new Scanner(System.in);
+	
+	private static void Out_Of_Bounds()
+	{
+		System.out.println("\nInput is out of bounds. Please try again! :) \n");
+                Play_Game();
+	}
+
+	public static boolean Is_Input_In_Bounds(int x, int y)
+	{
+		if(x > 3 || x < 0 || y > 3 || y < 0)
+		{
+			return false; 
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	public static boolean Is_Marked(int x, int y)
+	{
+		if(array[x][y] == "X" || array[x][y] == "O")
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 	
 	public static boolean Win()
 	{
 		for(int i = 0; i < 3; i++)
 		{
-        		if((array[0][i]==Player && array[1][i]==Player && array[2][i]==Player) || (array[i][0]==Player && array[i][1]==Player && array[i][2]==Player))
+        		if((array[0][i]==Player && array[1][i]==Player && array[2][i]==Player) ||
+   			   (array[i][0]==Player && array[i][1]==Player && array[i][2]==Player))
         		{
 				return true;
 			}
 		}
-		if((array[0][0]==Player && array[1][1]==Player && array[2][2]==Player || array[0][2]==Player && array[1][1]==Player && array[2][0]==Player))
+		if((array[0][0]==Player && array[1][1]==Player && array[2][2]==Player) || 
+               	   (array[0][2]==Player && array[1][1]==Player && array[2][0]==Player))
 		{
 			return true;
 		}
@@ -31,12 +64,30 @@ public class Tic_Tac_Toe
 		int x = Translate_Input(in.next());		
 		int y = in.nextInt();		
 		
+		if(Is_Input_In_Bounds(x, y))
+		{
+			Out_Of_Bounds();
+		}
+
+		if(Is_Marked(x, y))
+		{
+		   System.out.println("\nSpot already Marked. Please select a new one! :) \n");
+			Play_Game();
+		}
+
 		Update_Array(x, y);
 		if(Win())
 		{
 			return false;
 		}
-		Change_Player(Player);		
+
+		Change_Player(Player);
+
+		TurnCounter++;
+		if(TurnCounter == 9)
+		{
+			return false;
+		}	
 
 		return true;
 	}
@@ -55,7 +106,7 @@ public class Tic_Tac_Toe
 			case "C": 
 				return 3;
 			default:
-				return 0; //fix later
+				return 0;
 		}
 	}
 

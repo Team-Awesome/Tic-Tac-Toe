@@ -14,6 +14,32 @@ public class Test_Tic_Tac_Toe
 	}
 
 	@Test
+        public void testIs_Marked()
+        {
+                assertEquals(false, Tic_Tac_Toe.Is_Marked(2, 2));
+        }
+
+
+        @Test
+        public void testIs_Input_In_Bounds_2()
+        {
+                assertEquals(false, Tic_Tac_Toe.Is_Input_In_Bounds(4, 10));
+        }
+
+
+	@Test
+        public void testIs_Input_In_Bounds_1()
+	{
+		assertEquals(true, Tic_Tac_Toe.Is_Input_In_Bounds(1, 1));
+	}
+
+	@Test
+        public void testWin()
+	{
+		assertEquals(false, Tic_Tac_Toe.Win());
+	}
+
+	@Test
 	public void testTranslate_Input_a()
 	{
 		assertEquals(1, Tic_Tac_Toe.Translate_Input("A"));
@@ -54,7 +80,7 @@ public class Test_Tic_Tac_Toe
         @Test
         public void testWrite_Board()
         {
-                assertEquals("   1 2 3 \n---------\n1||*|*|*|\n2||*|*|*|\n3||*|*|*|\n"
+                assertEquals("   1 2 3 \n---------\nA||null|null|null|\nB||null|null|null|\nC||null|null|null|\n"
                                 , Tic_Tac_Toe.Write_Board());
         }
 
