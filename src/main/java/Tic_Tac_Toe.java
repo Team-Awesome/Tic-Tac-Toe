@@ -9,28 +9,28 @@ public class Tic_Tac_Toe
 	private static int TurnCounter = 0;
 	private static Scanner in = new Scanner(System.in);
 	
-	private static void Out_Of_Bounds_Exception()
+	private static boolean Out_Of_Bounds_Exception()
 	{
 		System.out.println("\nInput is out of bounds. Please try again! :) \n");
-                Play_Game();
+                return true;
 	}
 
-        private static void Is_Marked_Exception()
+        private static boolean Is_Marked_Exception()
         {
                 System.out.println("\nSpot already Marked. Please select a new one! :) \n");
-                Play_Game();
+                return true;
         }
 
 
 	public static boolean Is_Input_In_Bounds(int x, int y)
 	{
-		if(x > 3 || x < 1 || y > 3 || y < 1)
+		if(x <= 3 && x >= 1 && y <= 3 && y >= 1)
 		{
-			return false; 
+			return true; 
 		}
 		else
 		{
-			return true;
+			return false;
 		}
 	}
 
@@ -53,12 +53,22 @@ public class Tic_Tac_Toe
         		if((array[0][i]==Player && array[1][i]==Player && array[2][i]==Player) ||
    			   (array[i][0]==Player && array[i][1]==Player && array[i][2]==Player))
         		{
+				if(Player == "X")
+					X_WINS();
+				else
+					O_WINS();					
+
 				return true;
 			}
 		}
 		if((array[0][0]==Player && array[1][1]==Player && array[2][2]==Player) || 
                	   (array[0][2]==Player && array[1][1]==Player && array[2][0]==Player))
 		{
+			if(Player == "X")
+                                X_WINS();
+                        else
+                                O_WINS();
+
 			return true;
 		}
 	
@@ -69,6 +79,7 @@ public class Tic_Tac_Toe
 	{
 		if(TurnCounter == 9)
 		{
+			Draw_Screen();
 			return false;
 		}
 		else
@@ -85,12 +96,12 @@ public class Tic_Tac_Toe
 		
 		if(!Is_Input_In_Bounds(x, y))
 		{
-			Out_Of_Bounds_Exception();
+			return Out_Of_Bounds_Exception();
 		}
 
 		if(Is_Marked(x, y))
 		{
-		   	Is_Marked_Exception();
+		   	return Is_Marked_Exception();
 		}
 
 		Update_Array(x, y);
@@ -172,17 +183,75 @@ public class Tic_Tac_Toe
 	{	
 		String Board;
 	
-		Board  = "   1 2 3 \n";
-		Board += "---------\n";
-		Board += "A||" + array[0][0] + "|" + array[0][1] + "|" + array[0][2] + "|\n";
-		Board += "B||" + array[1][0] + "|" + array[1][1] + "|" + array[1][2] + "|\n";;
-		Board += "C||" + array[2][0] + "|" + array[2][1] + "|" + array[2][2] + "|\n";
+		Board  = "\t   1 2 3 \n";
+		Board += "\t---------\n";
+		Board += "\tA||" + array[0][0] + "|" + array[0][1] + "|" + array[0][2] + "|\n";
+		Board += "\tB||" + array[1][0] + "|" + array[1][1] + "|" + array[1][2] + "|\n";;
+		Board += "\tC||" + array[2][0] + "|" + array[2][1] + "|" + array[2][2] + "|\n";
 			
 		return Board;
 	}	
 	
+	public static void Start_Screen()
+	{
+	System.out.println("MMMMMMNNNNNNNNNMNdNMMMMMMMMMMMMMMNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMM");
+	System.out.println("MMMMM---...---+HMMMMMMMMMMMMMMMMN---...---hMMMMMMMMMMMMMMMMMMMMMN---...---hMMMMMMMMMMMMMMMMMMMMMMMMM");
+	System.out.println("MMMMMMmm/ /sdmmNdoyNMNdsoshNMMMMMNmm/ /hmmmNhssosdMMMMmyosyNMMMMMNmm/ /hmmmMNdsooydNMMMmyssydMMMMMMM");
+	System.out.println("MMMMMMMM/ /sNMMM+ +dN:    /yNMMMMMMM/ /hMMMh/oss- sNMo`   /smMMMMMMM/ /hMMMm-`/oo: /NM+`/os/ oNMMMMM");
+	System.out.println("MMMMMMMM/ /sNMMM+ +dy 'yNMMNMMMMMMMM/ /hMMMmsooo- +dN 'ymMMNMMMMMMMM/ /hMMM+ /hMMm` yd  ++o+.:hMMMMM");
+	System.out.println("MMMMMMMM/ /sNMMM+ +dh 'yNNdNMMMMMMMM/ /hMMM- +yh: +dN '+NMmmMMMMMMMM/ /hMMMs -hMNy `ym` odddhhmMMMMM");
+	System.out.println("MMMMMMMMo.+sNMMM+.+dM:    :sNMMMMMMMo.+hMMMs--+//.odM:    :odMMMMMMMo.+hMMMNs--::-:smMd/-:///smMMMMM");
+	System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+	System.out.println("");
+	System.out.println("Welcome to Super Tic Tac Toe");
+	}
+
+	public static void Draw_Screen()
+	{
+		System.out.println(Write_Board());
+		System.out.println(" _______   _______    ______   __       __ ");
+		System.out.println("|       \\ |       \\  /      \\ |  \\  _  |  \\");
+		System.out.println("| $$$$$$$\\| $$$$$$$\\|  $$$$$$\\| $$ / \\ | $$");
+		System.out.println("| $$  | $$| $$__| $$| $$__| $$| $$/  $\\| $$");
+		System.out.println("| $$  | $$| $$    $$| $$    $$| $$  $$$\\ $$");
+		System.out.println("| $$  | $$| $$$$$$$\\| $$$$$$$$| $$ $$\\$$\\$$");
+		System.out.println("| $$__/ $$| $$  | $$| $$  | $$| $$$$  \\$$$$");
+		System.out.println("| $$    $$| $$  | $$| $$  | $$| $$$    \\$$$");
+		System.out.println(" \\$$$$$$$  \\$$   \\$$ \\$$   \\$$ \\$$      \\$$");
+	}
+
+	public static void X_WINS()
+	{
+		System.out.println(Write_Board());
+		System.out.println(" __    __        __       __  ______  __    __   ______  ");
+		System.out.println("|  \\  |  \\      |  \\  _  |  \\|      \\|  \\  |  \\ /      \\ ");
+		System.out.println("| $$  | $$      | $$ / \\ | $$ \\$$$$$$| $$\\ | $$|  $$$$$$\\");
+		System.out.println(" \\$$\\/  $$      | $$/  $\\| $$  | $$  | $$$\\| $$| $$___\\$$");
+		System.out.println("  >$$  $$       | $$  $$$\\ $$  | $$  | $$$$\\ $$ \\$$    \\ ");
+		System.out.println(" /  $$$$\\       | $$ $$\\$$\\$$  | $$  | $$\\$$ $$ _\\$$$$$$\\");
+		System.out.println("|  $$ \\$$\\      | $$$$  \\$$$$ _| $$_ | $$ \\$$$$|  \\__| $$");
+		System.out.println("| $$  | $$      | $$$    \\$$$|   $$ \\| $$  \\$$$ \\$$    $$");
+		System.out.println(" \\$$   \\$$       \\$$      \\$$ \\$$$$$$ \\$$   \\$$  \\$$$$$$ ");
+	}
+
+        public static void O_WINS()
+        {
+                System.out.println(Write_Board());
+                System.out.println("  ______       __       __  ______  __    __   ______  ");
+                System.out.println(" /      \\     |  \\  _  |  \\|      \\|  \\  |  \\ /      \\ ");
+                System.out.println("|  $$$$$$\\    | $$ / \\ | $$ \\$$$$$$| $$\\ | $$|  $$$$$$\\");
+                System.out.println("| $$  | $$    | $$/  $\\| $$  | $$  | $$$\\| $$| $$___\\$$");
+                System.out.println("| $$  | $$    | $$  $$$\\ $$  | $$  | $$$$\\ $$ \\$$    \\ ");
+                System.out.println("| $$  | $$    | $$ $$\\$$\\$$  | $$  | $$\\$$ $$ _\\$$$$$$\\");
+                System.out.println("| $$__/ $$    | $$$$  \\$$$$ _| $$_ | $$ \\$$$$|  \\__| $$");
+                System.out.println(" \\$$    $$    | $$$    \\$$$|   $$ \\| $$  \\$$$ \\$$    $$");
+                System.out.println("  \\$$$$$$      \\$$      \\$$ \\$$$$$$ \\$$   \\$$  \\$$$$$$ ");
+        }
+
+
 	public static void main(String[] args)
 	{
+		Start_Screen();
 		Initialize_Board();
 		while(Play_Game());
 	}
