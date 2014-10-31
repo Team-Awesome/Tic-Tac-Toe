@@ -194,16 +194,15 @@ public class Tic_Tac_Toe
 	
 	public static void Start_Screen()
 	{
-	System.out.println("MMMMMMNNNNNNNNNMNdNMMMMMMMMMMMMMMNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMM");
-	System.out.println("MMMMM---...---+HMMMMMMMMMMMMMMMMN---...---hMMMMMMMMMMMMMMMMMMMMMN---...---hMMMMMMMMMMMMMMMMMMMMMMMMM");
-	System.out.println("MMMMMMmm/ /sdmmNdoyNMNdsoshNMMMMMNmm/ /hmmmNhssosdMMMMmyosyNMMMMMNmm/ /hmmmMNdsooydNMMMmyssydMMMMMMM");
-	System.out.println("MMMMMMMM/ /sNMMM+ +dN:    /yNMMMMMMM/ /hMMMh/oss- sNMo`   /smMMMMMMM/ /hMMMm-`/oo: /NM+`/os/ oNMMMMM");
-	System.out.println("MMMMMMMM/ /sNMMM+ +dy 'yNMMNMMMMMMMM/ /hMMMmsooo- +dN 'ymMMNMMMMMMMM/ /hMMM+ /hMMm` yd  ++o+.:hMMMMM");
-	System.out.println("MMMMMMMM/ /sNMMM+ +dh 'yNNdNMMMMMMMM/ /hMMM- +yh: +dN '+NMmmMMMMMMMM/ /hMMMs -hMNy `ym` odddhhmMMMMM");
-	System.out.println("MMMMMMMMo.+sNMMM+.+dM:    :sNMMMMMMMo.+hMMMs--+//.odM:    :odMMMMMMMo.+hMMMNs--::-:smMd/-:///smMMMMM");
-	System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+	System.out.println("______________________");
+        System.out.println("___  __/__  __/__  __/");
+        System.out.println("__  /  __  /  __  /   ");
+        System.out.println("_  /   _  /   _  /    ");
+        System.out.println("/_/    /_/    /_/     ");
+        System.out.println("");
+        System.out.println("Welcome to Tic Tac Toe^64");
 	System.out.println("");
-	System.out.println("Welcome to Super Tic Tac Toe");
+	System.out.println("");
 	}
 
 	public static void Draw_Screen()
