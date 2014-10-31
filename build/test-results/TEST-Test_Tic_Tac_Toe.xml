@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test_Tic_Tac_Toe" tests="15" skipped="0" failures="0" errors="0" timestamp="2014-10-31T14:40:21" hostname="i-24e195b4" time="0.035">
+  <properties/>
+  <testcase name="testTranslate_xCoordinate_a" classname="Test_Tic_Tac_Toe" time="0.011"/>
+  <testcase name="testTranslate_xCoordinate_b" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testTranslate_xCoordinate_c" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testWin" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testTranslate_yCoordinate_char" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testIs_Marked" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testChange_Player_OtoX" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testChange_Player_XtoO" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testTranslate_yCoordinate_num" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testTranslate_xCoordinate_other" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testWrite_Board" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testIs_Input_In_Bounds_1" classname="Test_Tic_Tac_Toe" time="0.001"/>
+  <testcase name="testIs_Input_In_Bounds_2" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testIs_Input_In_Bounds_3" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <testcase name="testIs_Input_In_Bounds_4" classname="Test_Tic_Tac_Toe" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

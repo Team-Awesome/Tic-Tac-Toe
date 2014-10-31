@@ -98,7 +98,7 @@ public class Test_Tic_Tac_Toe
         @Test
         public void testWrite_Board()
         {
-                assertEquals("   1 2 3 \n---------\nA||null|null|null|\nB||null|null|null|\nC||null|null|null|\n"
+                assertEquals("\t   1 2 3 \n	---------\n	A||null|null|null|\n	B||null|null|null|\n	C||null|null|null|\n"
                                 , Tic_Tac_Toe.Write_Board());
         }
 }
