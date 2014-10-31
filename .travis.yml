@@ -2,3 +2,19 @@ language: java
 jdk:
  - openjdk7
  - oraclejdk7
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "n6HSlB3s95+N5LSjn0pGXmvRBNkui5vtcWbjBuppEXRMpMUDmG0Am4rac65tkOSdFbD1IbZL8zHTwYI+9biljp4FDW/mtZxmlbFyk0jzm1a3DrhHEuY9EM8wfFJVawEM6zGSyv1R2QUdboRaLQ5yYfhKYAQhYmUN/7u1j1NEzeA="
+
+addons:
+  coverity_scan:
+    project:
+      name: "Team-Awesome/Tic-Tac-Toe"
+      description: "Build submitted via Travis CI"
+    notification_email: hans13@ru.is
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan
