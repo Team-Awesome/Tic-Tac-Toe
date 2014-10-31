@@ -194,15 +194,15 @@ public class Tic_Tac_Toe
 	
 	public static void Start_Screen()
 	{
-	System.out.println("______________________");
-        System.out.println("___  __/__  __/__  __/");
-        System.out.println("__  /  __  /  __  /   ");
-        System.out.println("_  /   _  /   _  /    ");
-        System.out.println("/_/    /_/    /_/     ");
-        System.out.println("");
-        System.out.println("Welcome to Tic Tac Toe^64");
-	System.out.println("");
-	System.out.println("");
+		System.out.println("______________________");
+        	System.out.println("___  __/__  __/__  __/");
+        	System.out.println("__  /  __  /  __  /   ");
+        	System.out.println("_  /   _  /   _  /    ");
+        	System.out.println("/_/    /_/    /_/     ");
+        	System.out.println("");
+        	System.out.println("Welcome to Tic Tac Toe^64");
+		System.out.println("");
+		System.out.println("");
 	}
 
 	public static void Draw_Screen()
@@ -247,12 +247,24 @@ public class Tic_Tac_Toe
                 System.out.println("  \\$$$$$$      \\$$      \\$$ \\$$$$$$ \\$$   \\$$  \\$$$$$$ ");
         }
 
+	public static void Freeze_Screen()
+	{
+		try
+		{
+			Thread.sleep(5000);
+		}
+		catch(InterruptedException ex)
+		{
+			Thread.currentThread().interrupt();
+		}
+	}	
 
 	public static void main(String[] args)
 	{
 		Start_Screen();
 		Initialize_Board();
 		while(Play_Game());
+		Freeze_Screen();
 	}
 }
 
