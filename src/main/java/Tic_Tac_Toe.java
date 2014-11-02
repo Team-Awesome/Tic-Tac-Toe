@@ -245,26 +245,23 @@ public class Tic_Tac_Toe
                 System.out.println("| $$__/ $$    | $$$$  \\$$$$ _| $$_ | $$ \\$$$$|  \\__| $$");
                 System.out.println(" \\$$    $$    | $$$    \\$$$|   $$ \\| $$  \\$$$ \\$$    $$");
                 System.out.println("  \\$$$$$$      \\$$      \\$$ \\$$$$$$ \\$$   \\$$  \\$$$$$$ ");
-        }
+        }	
 
-	public static void Freeze_Screen()
+	public static void ExitGame()
 	{
-		try
-		{
-			Thread.sleep(5000);
-		}
-		catch(InterruptedException ex)
-		{
-			Thread.currentThread().interrupt();
-		}
-	}	
+		System.out.println("Press 'ENTER' to exit game. Have a nice day :) ");
+
+		in.nextLine();
+		in.nextLine();
+	}
 
 	public static void main(String[] args)
 	{
 		Start_Screen();
 		Initialize_Board();
 		while(Play_Game());
-		Freeze_Screen();
+		
+		ExitGame();
 	}
 }
 
