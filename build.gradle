@@ -20,7 +20,7 @@ dependencies {
 
 jar {
    	manifest.attributes 'Main-Class': 'Tic_Tac_Toe'
-    	destinationDir file('/home/ingolfurs12/Desktop')
+    	destinationDir file('~/')
 }
 
 task runGame(type: Exec, dependsOn: jar) {
@@ -28,7 +28,6 @@ task runGame(type: Exec, dependsOn: jar) {
 	args '-jar', "$jar.archivePath", ''
 	standardInput = System.in
 }
-
 
 
 
